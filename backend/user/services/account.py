@@ -14,7 +14,7 @@ from backend.user.core.session import get_db
 from backend.user.models.db.account import User
 from backend.user.models.schemas.account import ShowUser, UserCreate
 from backend.user.securities.hashing import Hasher
-from config import settings
+from config.manager import settings
 
 
 #  создание пользователя
@@ -28,11 +28,11 @@ async def _create_new_user(body: UserCreate, session) -> ShowUser:
             hashed_password=Hasher.get_password_hash(body.password),
         )
         return ShowUser(
-            user_id=uuid.UUID(user.user_id.name),
-            name=user.name.name,
-            surname=user.surname.name,
-            email=EmailStr(user.email.name),
-            is_active=bool(user.is_active.name),
+            user_id=user.user_id,
+            name=user.name,
+            surname=user.surname,
+            email=user.email,
+            is_active=user.is_active,
         )
 
 
@@ -67,11 +67,11 @@ async def _get_user_by_id(user_id, session) -> Union[ShowUser, None]:
         )
         if user is not None:
             return ShowUser(
-                user_id=uuid.UUID(user.user_id.name),
-                name=user.name.name,
-                surname=user.surname.name,
-                email=EmailStr(user.email.name),
-                is_active=bool(user.is_active.name),
+                user_id=user.user_id,
+                name=user.name,
+                surname=user.surname,
+                email=user.email,
+                is_active=user.is_active,
             )
         return None
 
@@ -110,7 +110,7 @@ async def get_current_user_from_token(
     )
     try:
         payload = jwt.decode(
-            token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
+            token, settings.JWT_SECRET_KEY, algorithms=[settings.JWT_ALGORITHM]
         )
         email: Optional[str] = payload.get("sub")
         print("username/email extracted is ", email)

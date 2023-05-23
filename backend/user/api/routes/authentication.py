@@ -7,7 +7,7 @@ from fastapi import status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from config import settings
+from config.manager import settings
 from backend.user.services.account import authenticate_user
 from backend.user.models.schemas.account import Token
 from backend.user.core.session import get_db
@@ -27,7 +27,7 @@ async def login_for_access_token(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username or password",
         )
-    access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token_expires = timedelta(minutes=settings.JWT_MIN)
     access_token = create_access_token(
         data={"sub": user.email, "other_custom_data": [1, 2, 3, 4]},
         expires_delta=access_token_expires,

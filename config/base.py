@@ -1,7 +1,7 @@
 import logging
 import pathlib
 
-import decouple # type: ignore
+import decouple  # type: ignore
 import pydantic
 
 ROOT_DIR: pathlib.Path = pathlib.Path(
@@ -93,3 +93,7 @@ class BackendBaseSettings(pydantic.BaseSettings):
             "openapi_prefix": self.OPENAPI_PREFIX,
             "api_prefix": self.API_PREFIX,
         }
+
+    @property
+    def REAL_DATABASE_URL(self) -> str:
+        return f"{self.DB_POSTGRES_SCHEMA}://{self.DB_POSTGRES_USENRAME}:{self.DB_POSTGRES_PASSWORD}@{self.DB_POSTGRES_HOST}:{self.DB_POSTGRES_PORT}/{self.DB_POSTGRES_NAME}"

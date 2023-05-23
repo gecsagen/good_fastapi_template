@@ -4,9 +4,17 @@ from fastapi.routing import APIRouter
 
 from .api.routes.account import user_router
 from .api.routes.authentication import login_router
+from config.manager import settings
+
 
 # create instance of the app
-app = FastAPI(title="My API", version="1.0.0")
+print(settings.REAL_DATABASE_URL)
+app = FastAPI(
+    title=settings.TITLE,
+    version=settings.VERSION,
+    docs_url=settings.DOCS_URL,
+    debug=settings.DEBUG,
+)
 
 # create the instance for the routes
 main_api_router = APIRouter()
