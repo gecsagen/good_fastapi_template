@@ -1,0 +1,62 @@
+## Структура проекта
+- `.dockerignore`
+- `.env`
+- `.env.example`
+- `.gitignore`
+- `Dockerfile`
+- `README.md`
+- `alembic.ini`
+- backend/
+    - `__init__.py`
+    - user/
+        - `__init__.py`
+        - api/
+            - `__init__.py`
+            - routes/
+                - `__init__.py`
+                - `account.py`
+                - `authentication.py`
+        - core/
+            - `__init__.py`
+            - `account.py`
+            - `session.py`
+        - `main.py`
+        - models/
+            - `__init__.py`
+            - db/
+                - `__init__.py`
+                - `account.py`
+            - schemas/
+                - `__init__.py`
+                - `account.py`
+        - securities/
+            - `__init__.py`
+            - `hashing.py`
+            - `security.py`
+        - services/
+            - `__init__.py`
+            - `account.py`
+        - utils/
+            - `__init__.py`
+- common/
+    - `__init__.py`
+- config/
+    - `__init__.py`
+    - `base.py`
+    - `development.py`
+    - `environment.py`
+    - `manager.py`
+    - `production.py`
+    - `staging.py`
+- `docker-compose.yml`
+- migrations/
+    - `README`
+    - `env.py`
+    - `script.py.mako`
+    - versions/
+        - `287246e5974d_user.py`
+- `requirements.txt`
+- scripts/
+    - `__init__.py`
+- tests/
+    - `__init__.py`
