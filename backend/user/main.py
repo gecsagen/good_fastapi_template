@@ -8,7 +8,6 @@ from config.manager import settings
 
 
 # create instance of the app
-print(settings.REAL_DATABASE_URL)
 app = FastAPI(
     title=settings.TITLE,
     version=settings.VERSION,
