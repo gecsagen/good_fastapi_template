@@ -79,5 +79,27 @@ Note: This description is a general overview of the project's purpose and struct
 - `scripts/`: The directory for project scripts.
   - `__init__.py`: An initialization file for the `scripts` module.
 - `tests/`: The directory for test modules.
-  - `__init__.py`: An initialization file for the `tests` module.
+  - `__init__.py`: An initialization file for the `tests` module  
+
+**Contributing**
+
+Contributions to this FastAPI template application are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+Before contributing, please review the [contributing guidelines](CONTRIBUTING.md) for more information.
+
+**License**
+
+This project is licensed under the MIT License.
+
+**Acknowledgements**
+
+- The FastAPI framework: [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
+- Docker: [https://www.docker.com/](https://www.docker.com/)
+- Alembic: [https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)
+
+**Contact**
+
+For any questions or inquiries, please contact [geksbomba@gmail.com]
+
+Feel free to explore the codebase and customize it to suit your project requirements. Happy coding!
 
