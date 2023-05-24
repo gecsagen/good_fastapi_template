@@ -180,3 +180,10 @@ For any questions or inquiries, please contact [geksbomba@gmail.com]
 
 Feel free to explore the codebase and customize it to suit your project requirements. Happy coding!
 
+**Note:**
+This project is based on the code and concepts from the following repositories:
+
+- [FastAPI Backend Template](https://github.com/Aeternalis-Ingenium/FastAPI-Backend-Template)
+- [luchanos_oxford_university](https://github.com/luchanos/luchanos_oxford_university)
+
+I have used their code as a reference and inspiration to implement my own FastAPI template. I would like to acknowledge and express my gratitude to the authors and contributors of these projects for their valuable work.
