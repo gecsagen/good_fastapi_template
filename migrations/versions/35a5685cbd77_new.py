@@ -1,8 +1,8 @@
-"""user
+"""new
 
-Revision ID: 287246e5974d
+Revision ID: 35a5685cbd77
 Revises: 
-Create Date: 2023-05-22 12:21:37.785399
+Create Date: 2023-05-24 10:53:59.908400
 
 """
 from alembic import op
@@ -10,11 +10,10 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '287246e5974d'
-down_revision = None  # type: ignore
-branch_labels = None  # type: ignore
-depends_on = None  # type: ignore
-
+revision = '35a5685cbd77'
+down_revision = None
+branch_labels = None
+depends_on = None
 
 
 def upgrade() -> None:
