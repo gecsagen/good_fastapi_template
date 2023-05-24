@@ -80,6 +80,83 @@ Note: This description is a general overview of the project's purpose and struct
   - `__init__.py`: An initialization file for the `scripts` module.
 - `tests/`: The directory for test modules.
   - `__init__.py`: An initialization file for the `tests` module  
+## Project Installation
+
+Follow these instructions to install and configure the project.
+
+### Prerequisites
+
+Make sure you have the following tools installed:
+
+- Python 3
+- Docker
+
+### Installation Steps
+
+1. Clone the project repository:
+
+   ```bash
+   git clone https://github.com/gecsagen/good_fastapi_template.git
+   cd good_fastapi_template
+   ```
+
+2. Create a virtual environment and activate it:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install the project dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure the `.env` file. Open the `.env` file and set the following environment variables:
+
+   ```
+   POSTGRES_USERNAME=<db_user>
+   POSTGRES_PASSWORD=<db_password>
+   POSTGRES_HOST=<db_server>
+   POSTGRES_PORT=<db_port>
+   POSTGRES_DB=<db_name>
+   POSTGRES_SCHEMA=<db_schema>
+   ```
+
+   Replace `<db_user>`, `<db_password>`, `<db_server>`, `<db_port>`, `<db_name>`, and `<db_schema>` with the appropriate values.
+
+5. Start the Docker containers using the command:
+
+   ```bash
+   docker-compose -f docker-compose-local.yaml up -d
+   ```
+
+6. Create migrations using the command:
+
+   ```bash
+   alembic revision --autogenerate -m "comment"
+   ```
+
+   Replace `"comment"` with a comment describing the migration.
+
+7. Apply the migrations using the command:
+
+   ```bash
+   alembic upgrade heads
+   ```
+
+8. Run the project using the command:
+
+   ```bash
+   python3 -m uvicorn backend.user.main:app --port 8000 --reload
+   ```
+
+   Your project is now running and accessible at `http://localhost:8000`.
+
+---
+
+Please note that these instructions assume the use of a Unix-like operating system such as Linux or macOS. If you are using Windows, some commands or steps may differ.
 
 **Contributing**
 
