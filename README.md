@@ -74,7 +74,7 @@ Note: This description is a general overview of the project's purpose and struct
   - `env.py`: The migration environment configuration file.
   - `script.py.mako`: The migration script template.
   - `versions/`: The directory for migration versions.
-    - `287246e5974d_user.py`: A migration file for creating the user table.
+    - `35a5685cbd77_new.py`: A migration file for creating the user table.
 - `requirements.txt`: The file containing project dependencies.
 - `scripts/`: The directory for project scripts.
   - `__init__.py`: An initialization file for the `scripts` module.
