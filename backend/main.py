@@ -2,8 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.routing import APIRouter
 
-from .api.routes.account import user_router
-from .api.routes.authentication import login_router
+from .user.api.routes.account import user_router
+from .user.api.routes.authentication import login_router
 from config.manager import settings
 
 
